@@ -1,15 +1,24 @@
-import React from 'react';
+import React from "react";
 
 interface ButtonComponentProps {
-    children: React.ReactNode
+  children: React.ReactNode;
+  onClick?: () => void;
 }
 
-const ButtonComponent: React.FC<ButtonComponentProps> = ({ children }) => {
-    return (
-        <>
-            <div className='bg-white p-3 rounded-full'>{children}</div>
-        </>
-    );
+const ButtonComponent: React.FC<ButtonComponentProps> = ({
+  children,
+  onClick,
+}) => {
+  return (
+    <>
+      <div
+        onClick={onClick}
+        className="bg-white px-3 rounded-full cursor-pointer"
+      >
+        {children}
+      </div>
+    </>
+  );
 };
 
 export default ButtonComponent;
