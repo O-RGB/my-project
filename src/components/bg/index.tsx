@@ -9,7 +9,7 @@ const BackgrondComponent: React.FC<BackgrondComponentProps> = ({
 }) => {
   return (
     <>
-      <div className="bg-violet-600 p-5 transition-all duration-200">
+      <div className="bg-violet-600 p-5 w-full rounded-lg shadow-md">
         {children}
       </div>
     </>

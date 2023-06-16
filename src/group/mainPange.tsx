@@ -12,28 +12,31 @@ const MainPage: React.FC<MainPageProps> = ({}) => {
     <>
       <LayoutCenter>
         <BackgrondComponent>
-          <div className="w-[500px]">
+          <div className="w-full">
             <HeaderComponent
               onClickShowLess={(e) => {
                 setNotification(e);
               }}
             ></HeaderComponent>
-            {notification == true ? (
-              <div className="flex flex-col gap-2 pt-4">
-                <NotificationComponent
-                  appIcon={"🟣"}
-                  appName="Fackbook"
-                  appDetail="wiegjoaie jeoigjao"
-                ></NotificationComponent>
-                <NotificationComponent
-                  appIcon={"🟣"}
-                  appName="VsCode"
-                  appDetail="wiegjoaie jeoigjao"
-                ></NotificationComponent>
-              </div>
-            ) : (
-              <></>
-            )}
+
+            <div
+              className={`flex flex-col gap-2 pt-4 transition-all duration-1000 ${
+                notification
+                  ? "h-[200px] opacity-100"
+                  : "h-[1px] overflow-hidden opacity-0"
+              } `}
+            >
+              <NotificationComponent
+                appIcon={"🟣"}
+                appName="Fackbook"
+                appDetail="Lorem Ipsum is simply dummy text of"
+              ></NotificationComponent>
+              <NotificationComponent
+                appIcon={"🟣"}
+                appName="VsCode"
+                appDetail="Since it looks like you're trying to make an accordion, I'd"
+              ></NotificationComponent>
+            </div>
           </div>
         </BackgrondComponent>
       </LayoutCenter>
